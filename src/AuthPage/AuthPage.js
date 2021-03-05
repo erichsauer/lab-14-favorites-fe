@@ -9,10 +9,12 @@ export default class AuthPage extends Component {
     }
 
     setErrorOrPassToken = result => {
-        result.includes('oops...')
-            ? this.setState({ error: result })
-            : this.props.handleToken(result)
-            && this.props.history.push('/search')
+        if (result.includes('oops...')) {
+            this.setState({ error: result })
+        } else {
+            this.props.handleToken(result)
+            this.props.history.push('/search')
+        }
     }
 
     handleEmail = e => this.setState({ email: e.target.value })
