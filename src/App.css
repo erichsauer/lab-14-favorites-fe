@@ -62,8 +62,9 @@ p {
   border: solid 1px white;
   width: 220px;
   margin: 10px;
-  height: 350px;
+  height: fit-content;
   cursor: pointer;
+  padding-bottom: 10px;
 }
 
 .image {
